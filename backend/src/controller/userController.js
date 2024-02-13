@@ -5,17 +5,13 @@ const createUser = async (req, res) => {
 
   const { name, email, telefone } = req.body;
 
+  const { status, response } = await userService.createUser(name, email, telefone);
 
-  const user = await userService.createUser(name, email, telefone);
-
-  res.status(201).json(user);
+  res.status(status).json(response);
 };
 
 const getUsers = async (_req, res) => {
-
   const users = await userService.getUsers();
-
-  console.log('Controller User', users);
 
   res.status(200).json(users);
 };

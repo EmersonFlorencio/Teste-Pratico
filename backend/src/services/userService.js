@@ -9,7 +9,7 @@ const createUser = async (name, email, telefone) => {
 
   const user = await User.create(userInfo);
 
-  return user;
+  return { status: 201, response: user };
 };
 
 const getUsers = async () => {
