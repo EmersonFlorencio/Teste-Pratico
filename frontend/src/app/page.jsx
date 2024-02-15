@@ -24,7 +24,10 @@ export default function Home() {
   const hendleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!nameRef.current?.value || !emailRef.current?.value || !telefoneRef.current?.value) return;
+    if (!nameRef.current?.value || !emailRef.current?.value || !telefoneRef.current?.value) {
+      // eslint-disable-next-line no-undef
+      return window.alert('Preencher todos os dados');
+    }
 
     const response = await api.post('/api/usuarios', {
       name: nameRef.current?.value,
@@ -34,44 +37,46 @@ export default function Home() {
 
     setUsers(alluser => [...alluser, response.data]);
 
+    // eslint-disable-next-line no-undef
+    window.alert('Usuario castrado com Sucesso!');
+
     nameRef.current.value = '';
     emailRef.current.value = '';
     telefoneRef.current.value = '';
-
   };
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-10">
-      <main className='my-10 w-3/12 h-4/5 md:max-w-2x1 bg-indigo-200 gap-5 rounded' >
-        <h1 className='text-3xl text-purple-950 font-bold text-center mt-16'>Cadastrar Usuarios</h1>
+      <main className='my-10 w-3/12 h-4/5 max-sm:w-40 bg-indigo-200 gap-5 rounded max-md:w-80 max-lg:w-96 max-xl:w-96 max-2xl:w-96' >
+        <h1 className='text-3xl text-purple-950 font-bold text-center mt-16 max-sm:text-xl'>Cadastrar Usuários</h1>
 
         <form className='flex flex-col justify-center items-center my-6' onSubmit={hendleSubmit}>
-          <div className='flex flex-col'>
-            <label className='font-medium text-black mb-2'>Nome:</label>
+          <div className='flex flex-col border-solid border-2 border-red-600 max-sm:w-28'>
+            <label className='font-bold text-black mb-2'>Nome:</label>
             <input
               type="text"
               placeholder='Nome Completo'
-              className='w-72 mb-5 p-2 rounded text-center'
+              className='mb-5 p-2 md:w-72 rounded text-center'
               ref={nameRef}
             />
           </div>
 
-          <div className='flex flex-col'>
-            <label className='font-medium text-black mb-2'>Email:</label>
+          <div className='flex flex-col max-sm:w-28'>
+            <label className='font-bold text-black mb-2'>Email:</label>
             <input
               type="email"
               placeholder='Email'
-              className='w-72 mb-5 p-2 rounded text-center'
+              className='mb-5 p-2 md:w-72 rounded text-center'
               ref={emailRef}
             />
           </div>
 
-          <div className='flex flex-col'>
-            <label className='font-medium text-black mb-2'>Telefone:</label>
+          <div className='flex flex-col max-sm:w-28'>
+            <label className='font-bold text-black mb-2'>Telefone:</label>
             <input
               type="tel"
               placeholder='Telefone'
-              className='w-72 mb-5 p-2 rounded text-center'
+              className='mb-5 p-2 rounded md:w-72 text-center'
               ref={telefoneRef}
             />
           </div>
@@ -79,19 +84,19 @@ export default function Home() {
           <input
             type="submit"
             value="Cadastrar"
-            className='cursor-pointer mt-10 px-12 py-4 bg-violet-500 rounded hover:bg-white hover:text-violet-700 font-semibold transition-all text-white hover:scale-110'
+            className='cursor-pointer max-sm:px-4 mt-7 px-12 py-4 bg-violet-500 rounded hover:bg-white hover:text-violet-700 font-semibold transition-all text-white hover:scale-110'
           />
         </form>
 
 
       </main>
       <section className='flex flex-col'>
-        <h2 className='text-3xl text-purple-950 font-bold text-center mb-4' >Lista de Usuarios</h2>
+        <h2 className='text-3xl text-purple-950 font-bold text-center mb-4'>Lista de Usuários</h2>
         {users.map((user) => (
-          <article key={user._id} className='w-96 bg-gray-400 p-2 rounded mt-4'>
-            <p><span className='font-medium'>Nome: </span>{user.name}</p>
-            <p><span className='font-medium'>Email: </span>{user.email}</p>
-            <p><span className='font-medium'>Telefone: </span>{user.telefone}</p>
+          <article key={user._id} className='w-96 bg-gray-400 p-2 rounded mt-4 max-sm:w-52'>
+            <p><span className='font-bold'>Nome: </span>{user.name}</p>
+            <p><span className='font-bold'>Email: </span>{user.email}</p>
+            <p><span className='font-bold'>Telefone: </span>{user.telefone}</p>
           </article>
         ))}
       </section>
