@@ -22,3 +22,9 @@ export default {
   createUser,
   getUsers,
 };
+
+/*
+  Aqui foi realizada duas funções, a create para inserir os dados que vem do front-end
+  no banco de dados e a função de getUsers para recuperar a listagem dos usuarios que 
+  ja estão cadastrados no banco de dados.
+*/

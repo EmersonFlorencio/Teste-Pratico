@@ -3,23 +3,29 @@ const validateUser = (req, res, next) => {
 
   if (!name || !email || !telefone) {
     return res.status(400)
-      .json({ message: 'Submit all fields for registration' });
+      .json({ message: 'Envie todos os campos para cadastro' });
   }
 
   if (name.length < 4) {
     return res.status(400)
-      .json({ message: 'Name length must be at least 4 characters long' });
+      .json({ message: 'O campo Nome deve ter pelo menos 4 caracteres' });
   }
   const emailRegex = /\S+@\S+\.\S+/;
   if (!emailRegex.test(email)) {
     return res.status(400)
-      .json({ message: 'Email must be a valid email' });
+      .json({ message: 'O e-mail deve ser um e-mail válido' });
   }
-  if (telefone.length < 10) {
+  if (telefone.length < 12) {
     return res.status(400)
-      .json({ message: 'Telefone length must be at least 10 characters long' });
+      .json({ message: 'O campo Telefone deve ter pelo menos 12 caracteres' });
   }
   next();
 };
 
 export default validateUser;
+
+/*
+  Middleware de validação das informações antes de cadastrar no banco de dados, caso 
+  algun dado ou informação não atende os requisitos, ele bloqueia a requisição e informa
+  o erro ao usúario.
+*/

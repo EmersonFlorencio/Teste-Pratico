@@ -18,3 +18,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('users', UserSchema);
 
 export default User;
+
+/*
+A model user utilizando o moongose para fazer a modelagem da coleção e o esquema dos dados.
+*/
