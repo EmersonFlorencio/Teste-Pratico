@@ -14,6 +14,10 @@ export default function Home() {
     loadUsers();
   }, []);
 
+  /*
+  useEffect chamando a função loadUsers fazendo a requisição GET da nossa Api de usúarios. 
+  */
+
   const loadUsers = async () => {
     const response = await api.get('/api/usuarios');
     console.log(response.data);
@@ -21,12 +25,17 @@ export default function Home() {
     setUsers(response.data);
   };
 
+  /*
+    função LoadUser que faz a requisição GET na nossa Api e preenche nosso estado user 
+    para exibir eles na tela.
+   */
+
   const hendleSubmit = async (event) => {
     event.preventDefault();
 
     if (!nameRef.current?.value || !emailRef.current?.value || !telefoneRef.current?.value) {
       // eslint-disable-next-line no-undef
-      return window.alert('Preencher todos os dados');
+      return window.alert('Preencher todos os dados para o cadastro!');
     }
 
     const response = await api.post('/api/usuarios', {
@@ -38,12 +47,18 @@ export default function Home() {
     setUsers(alluser => [...alluser, response.data]);
 
     // eslint-disable-next-line no-undef
-    window.alert('Usuario castrado com Sucesso!');
+    window.alert('Usúario castrado com Sucesso!');
 
     nameRef.current.value = '';
     emailRef.current.value = '';
     telefoneRef.current.value = '';
   };
+
+  /*
+  A função hendleSubmit que dispara a requisição POST para cadastrar os usúarios no nosso
+  banco de dados, ela faz a verificação se todos os campos foram preenchidos e se estiver 
+  tudo correto, manda uma mensagem informado o cadastro do cliente.
+   */
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-10">
@@ -87,7 +102,6 @@ export default function Home() {
             className='cursor-pointer max-sm:px-4 mt-7 px-12 py-4 bg-violet-500 rounded hover:bg-white hover:text-violet-700 font-semibold transition-all text-white hover:scale-110'
           />
         </form>
-
 
       </main>
       <section className='flex flex-col'>
