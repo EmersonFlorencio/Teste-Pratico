@@ -29,23 +29,24 @@ Para fazer a comunicação entre o front e o back utilizei o axios, que facilita
 
 - Clone o projeto `git clone https://github.com/EmersonFlorencio/Teste-Pratico.git`
 <br>
+
 * Entre na pasta do Projeto:
 - `cd pasta-do-projeto`
 
 * Instale as dependências:
 
--`npm install`
+- `npm install`
 
 ### Rode o Projeto na sua maquina:
 ### Front-end:
--`npm start`
+- `npm start`
 ou
--`npm run dev`
+- `npm run dev`
 
 ### Back-end:
--`npm start`
+- `npm start`
 ou
--`npm run dev`
+- `npm run dev`
 
 ---
 
