@@ -30,10 +30,10 @@ Para fazer a comunicação entre o front e o back utilizei o axios, que facilita
 - Clone o projeto `git clone https://github.com/EmersonFlorencio/Teste-Pratico.git`
 <br>
 
-* Entre na pasta do Projeto:
+### Entre na pasta do Projeto:
 - `cd pasta-do-projeto`
 
-* Instale as dependências:
+### Instale as dependências:
 
 - `npm install`
 
