@@ -28,7 +28,6 @@ Para fazer a comunicação entre o front e o back utilizei o axios, que facilita
 ### Como rodar na minha máquina?
 
 - Clone o projeto `git clone https://github.com/EmersonFlorencio/Teste-Pratico.git`
-<br>
 
 ### Entre na pasta do Projeto:
 - `cd pasta-do-projeto`
