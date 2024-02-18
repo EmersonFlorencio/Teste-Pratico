@@ -28,12 +28,15 @@ Para fazer a comunicação entre o front e o back utilizei o axios, que facilita
 ### Como rodar na minha máquina?
 
 - Clone o projeto `git clone https://github.com/EmersonFlorencio/Teste-Pratico.git`
-* Entre ba pasta do Porjeto
+<br>
+* Entre na pasta do Projeto:
 - `cd pasta-do-projeto`
 
-* Instale as dependências
+* Instale as dependências:
+
 -`npm install`
-* Rode o Projeto na sua maquina
+
+### Rode o Projeto na sua maquina:
 ### Front-end:
 -`npm start`
 ou
