@@ -40,12 +40,18 @@ Para fazer a comunicação entre o front e o back utilizei o axios, que facilita
 ### Rode o Projeto na sua maquina:
 ### Front-end:
 - `npm start`
+<br>
 ou
+<br> 
+
 - `npm run dev`
 
 ### Back-end:
 - `npm start`
+<br>
 ou
+<br> 
+
 - `npm run dev`
 
 ---
